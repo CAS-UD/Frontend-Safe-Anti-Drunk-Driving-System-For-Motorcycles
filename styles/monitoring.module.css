@@ -1,0 +1,132 @@
+.main {
+    display: flex;
+    height: 810px;
+    z-index: 1;
+}
+
+.section_map{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    gap: 70px;
+}
+
+.section_map text{
+    height: 70%;
+    font: bold 2em 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    gap: 50px;
+    margin: 0 50px 0 0;
+    animation: show2 1s ease-in-out 1s forwards;
+}
+
+.section_map text label{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.section_map text label h1{
+    margin: 0;
+    padding: 0;
+}
+
+.section_render{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.section_render div {
+    height: 100%;
+    width: 70%;
+}
+
+.section_render text{
+    position: absolute;
+    right: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font: bold 2em 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    animation: show2 1s ease-in-out 1s forwards;
+    opacity: 0;
+}
+
+.section_render text label{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.section_render text label h1{
+    margin: 0;
+}
+
+
+.map {
+    height: 70%;
+    width: 60%;
+    opacity: 0;
+    left: 20px;
+    animation: show 1s ease-in-out 250ms forwards;
+    border: 5px solid #000000;
+    border-radius: 40px;
+    margin: 0 0 0 20px;
+}
+
+.moremonitoringEnable{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    padding: 0 40px 20px 40px;
+    gap: 35px;
+    justify-content: center;
+    opacity: 1;
+    transform: translateY(0);
+    transition: 2s ease-out;
+    z-index: 2;
+}
+
+.moremonitoring {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    padding: 0 40px 20px 40px;
+    gap: 35px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 2s ease-in;
+    z-index: 2;
+}
+
+
+@keyframes show {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes show2 {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+

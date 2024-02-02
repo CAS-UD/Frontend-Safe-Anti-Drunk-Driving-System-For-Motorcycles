@@ -1,0 +1,54 @@
+.conteinerMoreStadistics{
+    height: 200px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color: hsla(0, 11%, 86%, 0.486);
+    border-radius: 20px  ;
+    gap: 10px;
+    justify-content: center;
+    transition: .3s;
+    cursor: pointer;
+    border: 0px solid hsla(0, 11%, 86%, 0.486);
+    position: relative;
+    z-index: 1;
+    transform-origin: center;
+    box-sizing: border-box;
+}
+.conteinerMoreStadistics p {
+    margin: 0;
+    padding: 0;
+}
+.conteinerMoreStadistics:hover{
+    transform: scale(1.05);
+    border: 4px solid hsla(0, 5%, 76%, 0.591);
+    z-index: 2;
+}
+.moreStadistics{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.moreStadistics p {
+    margin: 0;
+    padding: 0;
+
+}
+.moreStadisticsWE{
+    position: relative;
+    width:200px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.moreStadisticsWE p {
+    margin: 0;
+    padding: 0;
+}
