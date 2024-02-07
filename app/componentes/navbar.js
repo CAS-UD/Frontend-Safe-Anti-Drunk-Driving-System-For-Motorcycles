@@ -31,15 +31,17 @@ export function Navbar () {
   ]
 
   return (
-    <navbar className={styles.navbar}>
-      {elementsMenu.map((element) => (
-        <Link href={element.link} className={styles.link} key={element.id}>
-          <p className={styles.menu}>
-            {element.name}
-          </p>
-          <div className={pathName === element.link ? styles.line : ''} />
-        </Link>
-      ))}
+    <navbar>
+      <ul className={styles.navbar}>
+        {elementsMenu.map((element) => (
+          <Link href={element.link} className={styles.link} key={element.id}>
+            <p className={styles.menu}>
+              {element.name}
+            </p>
+            <div className={pathName === element.link ? styles.line : ''} />
+          </Link>
+        ))}
+      </ul>
     </navbar>
   )
 }

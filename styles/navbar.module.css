@@ -3,7 +3,11 @@
     justify-content: space-between;
     height: 135px;
     align-items: center;
+    padding: 0;
+    margin: 0;
+    padding-inline-start: 0;
 }
+
 .link{
     width: 100%;
     height: 100%;
@@ -46,3 +50,29 @@
     }
 }
 
+@media screen and (max-width: 1200px) {
+    
+    .link{
+        position: relative;
+        font-size: 1em;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        
+    }
+    .link p{
+        transform: translate(0, 50%);
+    }
+    .navbar{
+        display: flex;
+        height: 80px;
+        justify-content: center;
+    }
+    .line{
+        position: absolute;
+        bottom: 0;
+        margin: 0;
+        height: 8px;
+    }
+
+}

@@ -37,10 +37,18 @@ export function Stadistics (props) {
       <p>{useStandarEjes === true ? props.nameData + ':' : null}</p>
       <div>
         {ejes.map((eje) => (
-          <div key={eje.id} className={useStandarEjes !== false ? styles.moreStadistics : styles.moreStadisticsWE}>
-            <p>{eje.name}</p>
-            <p>{props.data[[props.nameData]][eje.id]}</p>
-          </div>
+          props.data[props.nameData]
+            ? (
+              <div key={eje.id} className={useStandarEjes !== false ? styles.moreStadistics : styles.moreStadisticsWE}>
+                <p>{eje.name}</p>
+                <p>{props.data[props.nameData][eje.id]}</p>
+              </div>
+              )
+            : (
+              <div key={eje.id} className={styles.moreStadistics}>
+                <p>No Data Found</p>
+              </div>
+              )
         ))}
       </div>
     </div>

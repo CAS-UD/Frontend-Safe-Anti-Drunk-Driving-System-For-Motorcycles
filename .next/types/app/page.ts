@@ -1,4 +1,4 @@
-// File: C:\Users\ALEJA\OneDrive\Desktop\React\app\page.js
+// File: C:\Users\ALEJA\OneDrive\Documentos\proyectos_Git\Frontend-Safe-Anti-Drunk-Driving-System-For-Motorcycles\app\page.js
 import * as entry from '../../../app/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

@@ -6,7 +6,12 @@
     justify-content: space-between;
     height: 135px;
     align-items: center;
+    padding: 0;
+    margin: 0;
+    -webkit-padding-start: 0;
+            padding-inline-start: 0;
 }
+
 .navbar_link__W_wPi{
     width: 100%;
     height: 100%;
@@ -49,7 +54,32 @@
     }
 }
 
+@media screen and (max-width: 1200px) {
+    
+    .navbar_link__W_wPi{
+        position: relative;
+        font-size: 1em;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        
+    }
+    .navbar_link__W_wPi p{
+        transform: translate(0, 50%);
+    }
+    .navbar_navbar__g8CqE{
+        display: flex;
+        height: 80px;
+        justify-content: center;
+    }
+    .navbar_line__2bNXd{
+        position: absolute;
+        bottom: 0;
+        margin: 0;
+        height: 8px;
+    }
 
+}
 /*!**********************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./styles/pageHome.module.css ***!
   \**********************************************************************************************************************************************************************************************************************************************************************/

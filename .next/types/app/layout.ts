@@ -1,4 +1,4 @@
-// File: C:\Users\ALEJA\OneDrive\Desktop\React\app\layout.js
+// File: C:\Users\ALEJA\OneDrive\Documentos\proyectos_Git\Frontend-Safe-Anti-Drunk-Driving-System-For-Motorcycles\app\layout.js
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

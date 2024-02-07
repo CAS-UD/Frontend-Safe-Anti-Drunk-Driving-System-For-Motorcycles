@@ -6,7 +6,12 @@
     justify-content: space-between;
     height: 135px;
     align-items: center;
+    padding: 0;
+    margin: 0;
+    -webkit-padding-start: 0;
+            padding-inline-start: 0;
 }
+
 .navbar_link__W_wPi{
     width: 100%;
     height: 100%;
@@ -49,7 +54,32 @@
     }
 }
 
+@media screen and (max-width: 1200px) {
+    
+    .navbar_link__W_wPi{
+        position: relative;
+        font-size: 1em;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        
+    }
+    .navbar_link__W_wPi p{
+        transform: translate(0, 50%);
+    }
+    .navbar_navbar__g8CqE{
+        display: flex;
+        height: 80px;
+        justify-content: center;
+    }
+    .navbar_line__2bNXd{
+        position: absolute;
+        bottom: 0;
+        margin: 0;
+        height: 8px;
+    }
 
+}
 /*!************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./styles/Stadistics.module.css ***!
   \************************************************************************************************************************************************************************************************************************************************************************/
@@ -112,7 +142,8 @@
   \************************************************************************************************************************************************************************************************************************************************************************/
 .monitoring_main__6XjKl {
     display: flex;
-    height: 810px;
+    width: 100%;
+    height: calc(100vh - 135px);
     z-index: 1;
 }
 
@@ -217,9 +248,10 @@
     box-sizing: border-box;
     padding: 0 40px 20px 40px;
     gap: 35px;
+    justify-content: center;
     opacity: 0;
     transform: translateY(50px);
-    transition: 2s ease-in;
+    transition: 1s ease-in;
     z-index: 2;
 }
 
@@ -242,4 +274,48 @@
     }
 }
 
-
+@media screen and (max-width: 768px){
+    
+    .monitoring_main__6XjKl{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 0 100px 0;
+    }
+    .monitoring_section_map__Fc_em{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 100px 0 0 0;
+        padding: 0;
+        gap: 10px;
+    }
+    .monitoring_map__D_eZD {
+        width: 70%;
+        height: 220px;
+        margin: 0;
+        left: 0;
+    }
+    .monitoring_section_map__Fc_em text {
+        height: auto;
+        font-size: 1em;
+        gap: 10px;
+        margin: 0;
+    }
+    .monitoring_section_render__sfUtD{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 0 0 20px 0;
+    }
+    .monitoring_section_render__sfUtD text {
+        right: 0;
+        font-size: 1em;
+        position: relative;
+        font-size: 1em;
+    }
+    
+}

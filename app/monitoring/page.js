@@ -46,7 +46,7 @@ export default function Monitorin () {
   const [isScroll, setIsScroll] = useState(false)
 
   useEffect(() => {
-    const ws = io('http://192.168.1.2:80')
+    const ws = io('http://localhost:5000')
 
     ws.on('post_req', (data) => {
       data = JSON.parse(data)
