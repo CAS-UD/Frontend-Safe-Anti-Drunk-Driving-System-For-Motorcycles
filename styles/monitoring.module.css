@@ -3,6 +3,7 @@
     width: 100%;
     height: calc(100vh - 135px);
     z-index: 1;
+    padding-top: 135px;
 }
 
 .section_map{

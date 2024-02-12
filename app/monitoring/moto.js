@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 const Moto = React.forwardRef((props, ref) => {
-  const { nodes, materials } = useGLTF('/moto.glb')
+  const { nodes, materials } = useGLTF('/modelDraco.gltf')
   return (
     <group {...props} dispose={null} ref={ref}>
       <mesh geometry={nodes.node_id48.geometry} material={materials['71']} position={[-0.151, 0.016, 0.523]} scale={0.01} />
@@ -10,7 +10,7 @@ const Moto = React.forwardRef((props, ref) => {
   )
 })
 
-useGLTF.preload('/moto.glb')
+useGLTF.preload('/modelDraco.gltf')
 
 export const MotoComponent = (props) => {
   const groupRef = useRef()

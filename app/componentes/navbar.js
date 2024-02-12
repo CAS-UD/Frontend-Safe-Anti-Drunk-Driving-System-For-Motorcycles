@@ -3,10 +3,12 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import styles from '../../styles/navbar.module.css'
+import { useEffect, useState } from 'react'
 
 export function Navbar () {
   const pathName = usePathname()
-
+  const [scroll, setScroll] = useState(false)
+  const [isHover, setIsHover] = useState(false)
   const elementsMenu = [
     {
       name: 'Home',
@@ -29,10 +31,26 @@ export function Navbar () {
       id: 4
     }
   ]
+  useEffect(() => {
+    const handleScroll = () => {
+      if (document.documentElement.scrollTop >= 135) {
+        setScroll(true)
+      }
+      if (document.documentElement.scrollTop < 135) {
+        setScroll(false)
+      }
+      console.log('window.innerHeight', 945 + document.documentElement.scrollTop)
+    }
 
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+  const haddleMosuseEnter = () => {
+    setIsHover(true)
+  }
   return (
-    <navbar>
-      <ul className={styles.navbar}>
+    <>
+      <ul className={!scroll ? styles.navbar : isHover && scroll ? styles.navbarIsScrolling : styles.fakenavbar}>
         {elementsMenu.map((element) => (
           <Link href={element.link} className={styles.link} key={element.id}>
             <p className={styles.menu}>
@@ -42,6 +60,9 @@ export function Navbar () {
           </Link>
         ))}
       </ul>
-    </navbar>
+      {scroll
+        ? <div className={isHover ? styles.fakenavbar : styles.fakenavbarishover} onMouseEnter={haddleMosuseEnter}> </div>
+        : null}
+    </>
   )
 }
