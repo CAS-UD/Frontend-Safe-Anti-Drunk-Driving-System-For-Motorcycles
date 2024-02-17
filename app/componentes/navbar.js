@@ -45,12 +45,15 @@ export function Navbar () {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
-  const haddleMosuseEnter = () => {
+  const handleMosuseEnter = () => {
     setIsHover(true)
+  }
+  const handleMosuseLeave = () => {
+    setIsHover(false)
   }
   return (
     <>
-      <ul className={!scroll ? styles.navbar : isHover && scroll ? styles.navbarIsScrolling : styles.fakenavbar}>
+      <ul className={scroll === false ? styles.navbar : scroll && isHover ? styles.navbarIsScrollingHover : styles.navbarIsScrolling} onMouseLeave={handleMosuseLeave}>
         {elementsMenu.map((element) => (
           <Link href={element.link} className={styles.link} key={element.id}>
             <p className={styles.menu}>
@@ -61,7 +64,7 @@ export function Navbar () {
         ))}
       </ul>
       {scroll
-        ? <div className={isHover ? styles.fakenavbar : styles.fakenavbarishover} onMouseEnter={haddleMosuseEnter}> </div>
+        ? <div className={!isHover ? styles.fakenavbar : ''} onMouseEnter={handleMosuseEnter}> </div>
         : null}
     </>
   )
