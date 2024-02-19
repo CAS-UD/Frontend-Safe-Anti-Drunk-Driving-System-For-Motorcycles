@@ -5,6 +5,8 @@ import styles from '../../styles/About.module.css'
 import { useEffect, useState } from 'react'
 
 export default function About () {
+  const linkGitHub = 'https://github.com/CAS-UD/Safe-Anti-Drunk-Driving-System-For-Motorcycles.git'
+
   const text = [
     {
       id: 0,
@@ -22,54 +24,56 @@ export default function About () {
       text: 'A GPS sensor determines precise location using satellite signals, providing latitude, longitude, and sometimes altitude coordinates for accurate position tracking in devices like mobile phones and navigation systems.'
     }
   ]
-  const [count, setCount] = useState(0)
+  const [whatText, setWhatText] = useState(0)
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      if (count === 2) {
-        setCount(0)
-      } else {
-        setCount(count + 1)
-      }
-      return () => {
-        clearInterval(interval)
-      }
-    }, 5000)
-  }, [count])
+
+  }, [whatText])
 
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar />
       <main className={styles.main}>
-        <section>
+        <section className={styles.whatIs}>
           <h1>
-            Sistema seguro contra la conducción en estado de ebriedad para motocicletas
-            <span>
-              We are working on a device that aims to spot unusual
-              behaviors while riding motorcycles. Our goal is to
-              recognize situations where a person might not be in
-              the best condition to ride safely. This involves detecting
-              possible influences of substances like alcohol or drugs,
-              and also identifying drivers who have been on the road for
-              extended periods without a break. Our mission is to enhance
-              road safety by preventing risky situations and encouraging
-              responsible driving habits.
-            </span>
+            Safe system against drunk driving for motorcycles
           </h1>
+          <span>
+            We are working on a device that aims to spot unusual
+            behaviors while riding motorcycles. Our goal is to
+            recognize situations where a person might not be in
+            the best condition to ride safely. This involves detecting
+            possible influences of substances like alcohol or drugs,
+            and also identifying drivers who have been on the road for
+            extended periods without a break. Our mission is to enhance
+            road safety by preventing risky situations and encouraging
+            responsible driving habits.
+          </span>
+        </section>
+        <section className={styles.whereIs}>
           <h2>
             What technologies are used?
-            <span>
-              <p>
-                {text[count].name}
-              </p>
-              {text[count].text}
-            </span>
           </h2>
-        </section>
-        <section>
-          <a href='https://www.google.com' target='_blank' rel='noreferrer'>
-            Read more
-          </a>
+          <div className={styles.list}>
+            {text.map((item) => (
+              <ul key={item.id} onClick={() => { setWhatText(item.id); console.log(whatText); console.log(whatText === item.id); console.log(item.id); return null }}>
+                <li className={item.id === whatText ? styles.sensorChoosed : null}>
+                  {item.name}
+                </li>
+              </ul>
+            ))}
+          </div>
+          <div key={text[whatText].text} className={styles.textSensor}>
+            {text[whatText].text}
+          </div>
+          <article>
+            <h3>
+              Want to know more? Visit our GitHub repository
+            </h3>
+            <a href={linkGitHub} target='_blank' rel='noreferrer' className={styles.linkGit}>
+              GitHub
+            </a>
+          </article>
         </section>
       </main>
     </>
